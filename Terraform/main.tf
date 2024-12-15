@@ -15,10 +15,6 @@ provider "tfe" {
   token    = var.tfe_token
 }
 
-resource "tfe_organization" "org" {
-  name  = var.organizationName
-  email = var.email
-}
 
 resource "tfe_project" "project" {
   organization = tfe_organization.org.name
