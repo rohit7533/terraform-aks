@@ -3,7 +3,7 @@ kind: Component
 metadata:
   name: dev-aks-cluster
   annotations:
-    github.com/project-slug: bhandarekedar/terraform-aks
+    github.com/project-slug: kedarbhandare/terraform-aks
   description: Azure Kubernetes Service(AKS) cluster managed by Terraform
   tags:
     - azure
