@@ -1,7 +1,7 @@
 terraform {
   backend "remote" {
     # The name of your Terraform Cloud organization.
-    organization = "backstage-idp"
+    organization = "kedar-org"
 
     # The name of the Terraform Cloud workspace to store Terraform state files in.
     workspaces {
