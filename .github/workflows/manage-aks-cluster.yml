@@ -3,15 +3,28 @@ name: Manage AKS Cluster
 on:
   workflow_dispatch:
     inputs:
+      organizationName:
+        description: 'The name of your Organization. Terraform organizations let you manage organizations, projects, and teams.'
+        required: true
+      email:
+        description: 'Email of user/owner' 
+        required: true
+      projectName:
+        description: 'The name of your Project. Terraform projects let you manage resources and permissions.'  
+        required: true
+      workspaceName:
+        description: 'The name of your workspace. Terraform workspaces let you manage environment-specific configurations.'
+        required: true
+      resourceGroupName:
+        description: 'The name of your Azure Resource Group'  
+        required: true
       clusterName:
-        description: 'Name of the AKS cluster'
+        description: 'The name of your AKS cluster'
         required: true
-      awsRegion:
-        description: 'Azure Region for the cluster'
-        required: true
+      region:
+        description: 'The Azure region where the cluster will be deployed'
       action:
         description: 'Action to perform (apply/destroy)'
-        required: true
 
 jobs:
   apply_cluster:
