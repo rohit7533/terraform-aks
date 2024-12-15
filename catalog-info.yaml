@@ -1,0 +1,15 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: dev-aks-cluster
+  annotations:
+    github.com/project-slug: bhandarekedar/terraform-aks
+  description: Azure Kubernetes Service(AKS) cluster managed by Terraform
+  tags:
+    - azure
+    - aks
+    - terraform
+spec:
+  type: service
+  lifecycle: experimental
+  owner: kedar.bhandare
