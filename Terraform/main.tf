@@ -1,3 +1,15 @@
+terraform {
+  backend "remote" {
+    # The name of your Terraform Cloud organization.
+    organization = "backstage-idp"
+
+    # The name of the Terraform Cloud workspace to store Terraform state files in.
+    workspaces {
+      name = "NodeJSAks"
+    }
+  }
+}
+
 provider "tfe" {
   hostname = "app.terraform.io"
   token    = var.tfe_token
