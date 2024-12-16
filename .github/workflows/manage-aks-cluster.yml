@@ -47,7 +47,7 @@ jobs:
       run: terraform validate
       working-directory: Terraform
     - name: Terraform Apply
-      run: terraform apply -var tfe_token=${{ secrets.TF_API_TOKEN }} -var subscription_id=${{ secrets.subscription_id }} -var organizationName=${{ github.event.inputs.organizationName }} -var email=${{ github.event.inputs.email }} -var projectName=${{ github.event.inputs.projectName }} -var workspaceName=${{ github.event.inputs.workspaceName }} -var resourceGroupName=${{ github.event.inputs.resourceGroupName }} -var clusterName=${{ github.event.inputs.clusterName }} -var region=${{ github.event.inputs.region }} -auto-approve
+      run: terraform apply -var tfe_token=${{ secrets.TF_API_TOKEN }} -var subscription_id=${{ secrets.subscription_id }} -var email=${{ github.event.inputs.email }} -var projectName=${{ github.event.inputs.projectName }} -var resourceGroupName=${{ github.event.inputs.resourceGroupName }} -var clusterName=${{ github.event.inputs.clusterName }} -var region=${{ github.event.inputs.region }} -auto-approve
       working-directory: Terraform
 
   destroy_cluster:
@@ -70,5 +70,5 @@ jobs:
       run: terraform validate
       working-directory: Terraform
     - name: Terraform Destroy
-      run: terraform destroy -var tfe_token=${{ secrets.TF_API_TOKEN }} -var subscription_id=${{ secrets.subscription_id }} -var organizationName=${{ github.event.inputs.organizationName }} -var email=${{ github.event.inputs.email }} -var projectName=${{ github.event.inputs.projectName }} -var workspaceName=${{ github.event.inputs.workspaceName }} -var resourceGroupName=${{ github.event.inputs.resourceGroupName }} -var clusterName=${{ github.event.inputs.clusterName }} -var region=${{ github.event.inputs.region }} -auto-approve
+      run: terraform destroy -var tfe_token=${{ secrets.TF_API_TOKEN }} -var subscription_id=${{ secrets.subscription_id }} -var email=${{ github.event.inputs.email }} -var projectName=${{ github.event.inputs.projectName }} -var resourceGroupName=${{ github.event.inputs.resourceGroupName }} -var clusterName=${{ github.event.inputs.clusterName }} -var region=${{ github.event.inputs.region }} -auto-approve
       working-directory: Terraform

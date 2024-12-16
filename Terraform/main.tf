@@ -1,7 +1,7 @@
 terraform {
   backend "remote" {
-    # The name of your Terraform Cloud organization.
     organization = "kedar-org"
+    address      = "https://app.terraform.io"
 
     # The name of the Terraform Cloud workspace to store Terraform state files in.
     workspaces {
@@ -15,22 +15,15 @@ provider "tfe" {
   token    = var.tfe_token
 }
 
-
 resource "tfe_project" "project" {
-  organization = tfe_organization.org.name
+  organization = "kedar-org"
   name         = var.projectName
-}
-
-resource "tfe_workspace" "workspace" {
-  name         = var.workspaceName
-  organization = tfe_organization.org.name
 }
 
 provider "azurerm" {
   features {}
   subscription_id = var.subscription_id
 }
-
 
 resource "azurerm_resource_group" "aks_rg" {
   name     = var.resourceGroupName

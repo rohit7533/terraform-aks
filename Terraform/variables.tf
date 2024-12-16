@@ -3,12 +3,6 @@ variable "tfe_token" {
   type        = string
 }
 
-variable "organizationName" {
-  description = "The name of the Terraform Cloud organization"
-  type        = string
-  // default     = "backstage-idp"
-}
-
 variable "email" {
   description = "The email associated with the Terraform Cloud organization"
   type        = string
@@ -19,12 +13,6 @@ variable "projectName" {
   description = "The name of the Terraform Cloud project"
   type        = string
   // default     = "IDP"
-}
-
-variable "workspaceName" {
-  description = "The name of the Terraform Cloud workspace"
-  type        = string
-  // default     = "NodeJSAks"
 }
 
 variable "resourceGroupName" {
