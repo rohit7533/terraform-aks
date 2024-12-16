@@ -29,6 +29,17 @@ on:
 jobs:
   apply_cluster:
     runs-on: ubuntu-latest
+    env:
+      TF_VAR_organizationName: ${{ github.event.inputs.organizationName }}
+      TF_VAR_email: ${{ github.event.inputs.email }}
+      TF_VAR_projectName: ${{ github.event.inputs.projectName }}
+      TF_VAR_workspaceName: ${{ github.event.inputs.workspaceName }}
+      TF_VAR_resourceGroupName: ${{ github.event.inputs.resourceGroupName }}
+      TF_VAR_clusterName: ${{ github.event.inputs.clusterName }}
+      TF_VAR_region: ${{ github.event.inputs.region }}
+      TF_VAR_action: ${{ github.event.inputs.action }}
+      TF_VAR_tfe_token: ${{ github.event.inputs.TF_API_TOKEN }}
+      TF_VAR_subscription_id: ${{ github.event.inputs.subscription_id }}
     if: ${{ github.event.inputs.action == 'apply' }}
     steps:
     - name: Checkout code
@@ -47,7 +58,7 @@ jobs:
       run: terraform validate
       working-directory: Terraform
     - name: Terraform Apply
-      run: terraform apply -var tfe_token=${{ secrets.TF_API_TOKEN }} -var subscription_id=${{ secrets.subscription_id }} -var email=${{ github.event.inputs.email }} -var projectName=${{ github.event.inputs.projectName }} -var resourceGroupName=${{ github.event.inputs.resourceGroupName }} -var clusterName=${{ github.event.inputs.clusterName }} -var region=${{ github.event.inputs.region }} -auto-approve
+      run: terraform apply -auto-approve
       working-directory: Terraform
 
   destroy_cluster:
@@ -70,5 +81,5 @@ jobs:
       run: terraform validate
       working-directory: Terraform
     - name: Terraform Destroy
-      run: terraform destroy -var tfe_token=${{ secrets.TF_API_TOKEN }} -var subscription_id=${{ secrets.subscription_id }} -var email=${{ github.event.inputs.email }} -var projectName=${{ github.event.inputs.projectName }} -var resourceGroupName=${{ github.event.inputs.resourceGroupName }} -var clusterName=${{ github.event.inputs.clusterName }} -var region=${{ github.event.inputs.region }} -auto-approve
+      run: terraform destroy -auto-approve
       working-directory: Terraform

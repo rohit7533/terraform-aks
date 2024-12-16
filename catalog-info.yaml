@@ -4,8 +4,8 @@ metadata:
   name: dev-aks-cluster
   annotations:
     github.com/project-slug: kedarbhandare/terraform-aks
-    terraform/workspaces: kedar-org
-    terraform/organization: NodeJSAks
+    terraform/workspaces: NodeJSAks
+    terraform/organization: kedar-org
   description: Azure Kubernetes Service(AKS) cluster managed by Terraform
   tags:
     - azure
