@@ -1,8 +1,7 @@
 terraform {
   backend "remote" {
     organization = "kedar-org"
-    address      = "https://app.terraform.io"
-
+   
     # The name of the Terraform Cloud workspace to store Terraform state files in.
     workspaces {
       name = "NodeJSAks"
