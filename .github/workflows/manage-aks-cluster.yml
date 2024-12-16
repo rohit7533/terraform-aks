@@ -38,8 +38,8 @@ jobs:
       TF_VAR_clusterName: ${{ github.event.inputs.clusterName }}
       TF_VAR_region: ${{ github.event.inputs.region }}
       TF_VAR_action: ${{ github.event.inputs.action }}
-      TF_VAR_tfe_token: ${{ github.event.inputs.TF_API_TOKEN }}
-      TF_VAR_subscription_id: ${{ github.event.inputs.subscription_id }}
+      TF_VAR_tfe_token: ${{ secrets.TF_API_TOKEN}}
+      TF_VAR_subscription_id: ${{ secrets.subscription_id }}
     if: ${{ github.event.inputs.action == 'apply' }}
     steps:
     - name: Checkout code
