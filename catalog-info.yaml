@@ -13,5 +13,5 @@ metadata:
     - terraform
 spec:
   type: service
-  lifecycle: experimental
-  owner: kedar.bhandare
+  owner: "rohit7533"
+  lifecycle: production
