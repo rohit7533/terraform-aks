@@ -1,7 +1,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: demoapp-6 #dev-aks-cluster
+  name: demoapp-16 #dev-aks-cluster
   annotations:
     github.com/project-slug: rohit7533/terraform-aks
     terraform/workspaces: NodeJSAks
